@@ -39,16 +39,19 @@ export function SumaryTable(){
             <div className="grid grid-cols-7 gap-3">
                 
                 {daysBefore > 0 && Array.from({length: daysBefore}).map((_,i)=>{
-                    return <HabitDay key={i} dayFuture={true}/>
+                    return <HabitDay key={i} dayFuture={true} amount={0} completed={0}/>
                 })}
 
 
                 {sumaryDates.map(date => {
-                    return <HabitDay key={date.toString()} dayFuture={false}/>
+                    return <HabitDay key={date.toString()}
+                                     dayFuture={false}
+                                     amount={5}
+                                     completed={Math.round(Math.random() * 5)}/>
                 })}
 
                 {amountOfDaysToFill > 0 && Array.from({length: amountOfDaysToFill}).map((_,i)=>{
-                    return <HabitDay key={i} dayFuture={true}/>
+                    return <HabitDay key={i} dayFuture={true} amount={0} completed={0}/>
                 })}
             </div>
         </div>
